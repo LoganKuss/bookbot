@@ -1,33 +1,16 @@
-# My solution:
 def main():
-    with open("books/frankenstein.txt") as f:
-        file_contents = f.read()
-        final_file_contents = ''.join(c for c in file_contents if c.isalpha()).lower()
-        
-    return final_file_contents
+    path_of_book = "books/frankenstein.txt"
+    text = get_book_text(path_of_book)
+    num_words = num_of_words(text)
+    print(f"The number of words in Mary Shelley's Frankenstein are {num_words}")
 
-def count_words(full_string):
-    text = full_string.split()
-    word_num = len(text)
-    print(f"There are {word_num} words in the book")
+def num_of_words(text):
+    words = text.split()
+    word_num = len(words)
+    return word_num
 
-def count_letters(string):
-    letter_num = {}
-
-    for s in string:
-        letter_num[s] = letter_num.get(s, 0)+1
+def get_book_text(path):
+    with open(path) as f:
+        return f.read()
     
-    return letter_num    
-
-def print_report(letters):
-    sorted_letters = sorted(letters.items(), key=lambda item: item[1], reverse=True)
-    for letter, count in sorted_letters:
-        print(f"the {letter} character was found {count} times")
-
-
-
-
-text_final = main()
-final_report = count_letters(text_final)
-
-print_report(final_report)
+main()
