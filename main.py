@@ -8,10 +8,10 @@ def main():
         return
     
     for i, file in enumerate(files, start=1):
-        print(f"{i}. {files}: ")
+        print(f"{i}. {file}: ")
 
     try:
-        book_choice = int(input("Type 1, 2, 3, etc."))
+        book_choice = int(input("Type 1, 2, 3, etc.: "))
         if not book_choice >= 1 and book_choice <= len(files):
             raise ValueError("Choice out of range")
     except ValueError as e:
@@ -25,7 +25,7 @@ def main():
     char_sorted_list = chars_dict_to_sorted_list(num_of_chars)
     
     print(f"---- Begin report of {path_of_book}----")
-    print(f"There are {num_words} found in the book/n")
+    print(f"There are {num_words} words found in the book/n")
 
     for item in char_sorted_list:
         if not item["char"].isalpha():
