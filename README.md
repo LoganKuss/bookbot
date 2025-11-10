@@ -1,2 +1,3 @@
 # bookbot
-Takes book as input and gives information
+
+BookBot is my first [Boot.dev](https://www.boot.dev) project!~
