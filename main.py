@@ -1,3 +1,4 @@
+import sys
 from stats import num_words
 from stats import num_letters
 from stats import sorted_char_dict
