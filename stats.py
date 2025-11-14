@@ -17,3 +17,17 @@ def num_letters():
         else:
             num_dict[char] = 1
     return num_dict
+
+def sort_on(items):
+    return items["num"]
+
+def sorted_char_dict(char_dict):
+    char_lst = [] 
+    
+    for char, count in char_dict.items():
+        if char.isalpha():
+            char_lst.append({"char": char, "num": count})
+
+    char_lst.sort(reverse=True, key=sort_on)
+
+    return char_lst
