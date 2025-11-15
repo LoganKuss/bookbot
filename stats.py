@@ -1,16 +1,16 @@
-def get_book_text():
-    with open() as f:
+def get_book_text(book_path):
+    with open(book_path) as f:
         book_contents = f.read()
     return book_contents
 
-def num_words():
-    word_list = get_book_text().split()
+def num_words(book_path):
+    word_list = get_book_text(book_path).split()
     num_words_in_list = len(word_list)
     return num_words_in_list
 
-def num_letters():
+def num_letters(book_path):
     num_dict = {} 
-    book_str = get_book_text().lower()
+    book_str = get_book_text(book_path).lower()
     for char in book_str:
         if char in num_dict:
             num_dict[char] += 1
